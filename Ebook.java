@@ -1,8 +1,12 @@
-package estudo_de_caso;
+package refatoracao;
 
-public class Ebook extends Livro{
+public class Ebook extends Livro implements Promocao{
+    public Ebook(String titulo, String autor, double valor) {
+        super(titulo, autor, valor);
+    }
 
-    public Ebook(String titutlo, String autor, double valor) {
-        super(titutlo, autor, valor);
+    @Override
+    public boolean aplicarDesconto(double desconto) {
+        return false;
     }
 }

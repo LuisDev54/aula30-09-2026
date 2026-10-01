@@ -1,13 +1,22 @@
-package estudo_de_caso;
+package refatoracao;
 
-public class LivroFisico extends Livro{
+public class LivroFisico extends Livro implements Promocao{
+    public LivroFisico(String titulo, String autor, double valor) {
+        super(titulo, autor, valor);
 
-    public LivroFisico(String titutlo, String autor, double valor) {
-        super(titutlo, autor, valor);
     }
 
     @Override
-    public double getValor() {
-        return super.getValor() * 1.05;
+    public double valor() {
+        return super.valor() * 1.05;
+    }
+
+    @Override
+    public boolean aplicarDesconto(double desconto) {
+        if (desconto > 0.3){
+            return false;
+        }
+        valor -= valor * desconto;
+        return true;
     }
 }

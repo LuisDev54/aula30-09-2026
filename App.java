@@ -1,27 +1,29 @@
-package estudo_de_caso;
+package refatoracao;
+
+import estudo_de_caso.Livro;
 
 public class App {
-    static void main() {
+    static void main(String[] args) {
 
-    Livro LivroFisico =
-            new LivroFisico("Clean code","Robert C. Martin", 250);
+        Produto LivroFisico = new LivroFisico("Clean code","Robert C. Martin", 250);
 
-    Livro ebook =
-            new Ebook("Engenharia de Software", "Ian Sommerville", 300);
+        Produto ebook = new Ebook("Engenharia de Software", "Ian Sommerville", 300);
 
-    Livro minilivro =
-            new MiniLivro("UML", "Ralph Clark", 220);
+        Produto minilivro = new MiniLivro("UML", "Ralph Clark", 220);
 
-    Revista revista =
-            new Revista("SBC", "Moderna", 400);
+        Produto revista = new Revista("SBC", "Moderna", 400);
 
-    CarrinhoDeCompras carrinhoDeCompras = new CarrinhoDeCompras();
-    carrinhoDeCompras.adicionarLivro(LivroFisico);
-    carrinhoDeCompras.adicionarLivro(ebook);
-    carrinhoDeCompras.adicionarLivro(minilivro);
-    carrinhoDeCompras.adicionarRevista(revista);
+        CarrinhoDeCompras cProdutos = new CarrinhoDeCompras();
 
-    carrinhoDeCompras.exibirCarrinho();
-        System.out.println("Total R$: " +carrinhoDeCompras.totalCarrinho());
+        cProdutos.adicionarProduto(LivroFisico);
+        cProdutos.adicionarProduto(ebook);
+        cProdutos.adicionarProduto(minilivro);
+        cProdutos.adicionarProduto(revista);
+
+        cProdutos.exibirCarrinho();
+        cProdutos.totalCarrinho();
+
+
+
     }
 }

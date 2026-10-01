@@ -1,28 +1,11 @@
-package estudo_de_caso;
+package refatoracao;
 
-public class Revista {
-
-
+public class Revista implements Produto{
     private String titulo;
     private String editora;
-    private double valor;
+    protected double valor;
 
     public Revista(){
-
-    }
-
-    public Revista(String titulo, String editora, double valor) {
-        this.titulo = titulo;
-        this.editora = editora;
-        this.valor = valor;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public String getEditora() {
@@ -33,12 +16,11 @@ public class Revista {
         this.editora = editora;
     }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
+    public Revista(String titulo, String editora, double valor) {
+        this.titulo = titulo;
+        this.editora = editora;
         this.valor = valor;
+
     }
 
     @Override
@@ -48,5 +30,15 @@ public class Revista {
                 ", editora='" + editora + '\'' +
                 ", valor=" + valor +
                 '}';
+    }
+
+    @Override
+    public String titulo() {
+        return "";
+    }
+
+    @Override
+    public double valor() {
+        return 0;
     }
 }

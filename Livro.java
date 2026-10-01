@@ -1,25 +1,18 @@
-package estudo_de_caso;
+package refatoracao;
 
-public class Livro {
-    private String titutlo;
+public class Livro implements Produto{
+
+    private String titulo;
     private String autor;
-    private double valor;
+    protected double valor;
 
-    public Livro() {
+    public Livro(){
     }
 
-    public Livro(String titutlo, String autor, double valor) {
-        this.titutlo = titutlo;
+    public Livro(String titulo, String autor, double valor) {
+        this.titulo = titulo;
         this.autor = autor;
         this.valor = valor;
-    }
-
-    public String getTitutlo() {
-        return titutlo;
-    }
-
-    public void setTitutlo(String titutlo) {
-        this.titutlo = titutlo;
     }
 
     public String getAutor() {
@@ -30,19 +23,23 @@ public class Livro {
         this.autor = autor;
     }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
 
     @Override
     public String toString() {
-        return "Livro:" +
-                "titutlo:" + titutlo + '\'' +
-                ", autor:" + autor + '\'' +
-                ", valor:" + valor;
+        return "Livro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", valor=" + valor +
+                '}';
+    }
+
+    @Override
+    public String titulo() {
+        return "";
+    }
+
+    @Override
+    public double valor() {
+        return 0;
     }
 }

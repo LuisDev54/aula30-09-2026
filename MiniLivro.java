@@ -1,8 +1,12 @@
-package estudo_de_caso;
+package refatoracao;
 
-public class MiniLivro extends Livro{
+public class MiniLivro extends Livro implements Promocao{
+    public MiniLivro(String titulo, String autor, double valor) {
+        super(titulo, autor, valor);
+    }
 
-    public MiniLivro(String titutlo, String autor, double valor) {
-        super(titutlo, autor, valor);
+    @Override
+    public boolean aplicarDesconto(double desconto) {
+        return false;
     }
 }
